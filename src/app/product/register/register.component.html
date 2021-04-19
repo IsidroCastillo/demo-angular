@@ -1,0 +1,26 @@
+<h2 class="text-center mt-3">Registrar producto</h2>
+<div class="row mt-4 justify-content-center">
+  <div class="col-md-4">
+    <form  #f="ngForm" (ngSubmit)="save(f)">
+      <div>
+        <label for="">Nombre: </label>
+        <input  [(ngModel)]="product.name" name="name" class="form-control" />
+      </div>
+      <div>
+        <label for="">Descripción: </label>
+        <input  [(ngModel)]="product.description" name="description" class="form-control" />
+      </div>
+      <div>
+        <label for="">Precio: </label>
+        <input [(ngModel)]="product.price" name="price" class="form-control" />
+      </div>
+      <div>
+        <label for="">Stock: </label>
+        <input  [(ngModel)]="product.stock" name="stock" class="form-control" />
+      </div>
+      <div class="mt-4">
+        <button type="submit" class="btn btn-success btn-block">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

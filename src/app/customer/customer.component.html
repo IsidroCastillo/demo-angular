@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="card border-primary mt-3 mb-5">
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de clientes</h5>
+      <button class="btn btn-rounded btn-primary " type="button" [routerLink]="['/customers/save']">Registrar</button>
+      <table class="table table-bordered table-striped mt-3">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>F. Cumpleaños</th>
+            <th>F. Registro</th>
+            <th>Operaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{ customer.customerId}}</td>
+            <td>{{ customer.names }}</td>
+            <td>{{ customer.firstLastName }} {{ customer.secondLastName }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.birthDate }}</td>
+            <td>{{ customer.createdAt }}</td>
+            <td class="text-center">
+              <button class="btn btn-success btn-sm" [routerLink]="['/customers/update', customer.customerId]" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> |
+              <button class="btn btn-danger btn-sm" (click)='delete(customer)' ><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+</div>
